@@ -705,12 +705,23 @@ local function MUBRZ_fake_script() -- button.script
 	local script = Instance.new('LocalScript', button)
 
 	script.Parent.MouseButton1Click:Connect(function()
-		workspace.Gravity = 0
+		local player = game.Players.LocalPlayer
+local character = player.Character or player.CharacterAdded:Wait()
+ 
+local function enableZeroGravity()
+    local humanoidRootPart = character:WaitForChild("HumanoidRootPart")
+    
+    local zeroGravity = Instance.new("BodyForce")
+    zeroGravity.Force = Vector3.new(0, workspace.Gravity * humanoidRootPart.AssemblyMass, -0.83)
+    zeroGravity.Parent = humanoidRootPart
+end
+ 
+character:WaitForChild("Humanoid").Died:Connect(function()
+    enableZeroGravity()
+end)
 
+enableZeroGravity()
 		local humanoid = plr.Character:FindFirstChildWhichIsA("Humanoid")
-		humanoid.Sit = true
-		task.wait(0.1)
-		humanoid.RootPart.CFrame = humanoid.RootPart.CFrame * CFrame.Angles(math.pi * 0.5, 0, 0)
 		for _, v in ipairs(humanoid:GetPlayingAnimationTracks()) do
 			v:Stop()
 		end
