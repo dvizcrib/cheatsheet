@@ -73,7 +73,7 @@ ca:BindAction("zeezyAirjump",zeezyAirjump,false,AirjumpKey)
 --[[ Load Message ]]--
 
 print(scriptname .. " " .. ver .. " loaded successfully")
-print("made by Zeezy#7203")
+print("made by dviz")
 
 local notifSound = Instance.new("Sound",workspace)
 notifSound.PlaybackSpeed = 1.5
@@ -659,4 +659,5 @@ mini2.MouseButton1Click:Connect(function()
 	main.Frame.BackgroundTransparency = 0 
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 end)
+
 
