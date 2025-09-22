@@ -81,7 +81,7 @@ notifSound.Volume = 0.15
 notifSound.SoundId = "rbxassetid://170765130"
 notifSound.PlayOnRemove = true
 notifSound:Destroy()
-game.StarterGui:SetCore("SendNotification", {Title = "markedflip", Text = "markedflip успешно загружен!", Icon = "rbxassetid://85673482542375", Duration = 5, Button1 = "Okay"})
+game.StarterGui:SetCore("SendNotification", {Title = "markedflip", Text = "markedflip успешно загружен!", Icon = "rbxassetid://106746950104854", Duration = 5, Button1 = "Okay"})
 local Workspace = game:GetService("Workspace")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
@@ -666,4 +666,5 @@ mini2.MouseButton1Click:Connect(function()
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 
 end)
+
 
