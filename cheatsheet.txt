@@ -72,8 +72,12 @@ ca:BindAction("zeezyAirjump",zeezyAirjump,false,AirjumpKey)
 
 --[[ Load Message ]]--
 
-print(scriptname .. " " .. ver .. " успешно загружен!")
-print("сделано двизом короч")
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "markedgui";
+	Text = "by dviz";
+	Icon = "rbxthumb://type=Asset&id=137463531983384&w=150&h=150";
+    Button1 = "Okay})
+Duration = 5;
 
 local notifSound = Instance.new("Sound",workspace)
 notifSound.PlaybackSpeed = 1.5
@@ -81,12 +85,6 @@ notifSound.Volume = 0.15
 notifSound.SoundId = "rbxassetid://170765130"
 notifSound.PlayOnRemove = true
 notifSound:Destroy()
-game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "markedgui";
-	Text = "by dviz";
-	Icon = "rbxthumb://type=Asset&id=137463531983384&w=150&h=150";
-    Button1 = "Okay})
-Duration = 5;
 local Workspace = game:GetService("Workspace")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
@@ -665,6 +663,7 @@ mini2.MouseButton1Click:Connect(function()
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 
 end)
+
 
 
 
