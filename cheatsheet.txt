@@ -329,9 +329,9 @@ local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
 nowe = false
 
 game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "FLY GUI V3";
-	Text = "BY XNEO";
-	Icon = "rbxthumb://type=Asset&id=5107182114&w=150&h=150"})
+	Title = "flygui";
+	Text = "by dviz";
+	Icon = "rbxthumb://type=Asset&id=137463531983384&w=150&h=150"})
 Duration = 5;
 
 Frame.Active = true -- main = gui
@@ -666,5 +666,6 @@ mini2.MouseButton1Click:Connect(function()
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 
 end)
+
 
 
