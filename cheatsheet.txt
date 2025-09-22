@@ -81,7 +81,12 @@ notifSound.Volume = 0.15
 notifSound.SoundId = "rbxassetid://170765130"
 notifSound.PlayOnRemove = true
 notifSound:Destroy()
-game.StarterGui:SetCore("SendNotification", {Title = "markedflip", Text = "markedflip успешно загружен!", Icon = "rbxthumb://type=Asset&id=137463531983384&w=150&h=150", Duration = 5, Button1 = "Okay"})
+game:GetService("StarterGui"):SetCore("SendNotification", { 
+	Title = "markedgui";
+	Text = "by dviz";
+	Icon = "rbxthumb://type=Asset&id=137463531983384&w=150&h=150";
+    Button1 = "Okay})
+Duration = 5;
 local Workspace = game:GetService("Workspace")
 local CoreGui = game:GetService("CoreGui")
 local Players = game:GetService("Players")
@@ -327,12 +332,6 @@ local chr = game.Players.LocalPlayer.Character
 local hum = chr and chr:FindFirstChildWhichIsA("Humanoid")
 
 nowe = false
-
-game:GetService("StarterGui"):SetCore("SendNotification", { 
-	Title = "flygui";
-	Text = "by dviz";
-	Icon = "rbxthumb://type=Asset&id=137463531983384&w=150&h=150"})
-Duration = 5;
 
 Frame.Active = true -- main = gui
 Frame.Draggable = true
@@ -666,6 +665,7 @@ mini2.MouseButton1Click:Connect(function()
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 
 end)
+
 
 
 
