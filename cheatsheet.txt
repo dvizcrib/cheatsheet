@@ -156,9 +156,9 @@ Toggle.MouseButton1Click:connect(function()
 end)
 
 Toggle.MouseButton1Click:connect(function()
-	if Status.Text == "off" then
+	if Status.Text == "F" then
 		Clipon = true
-		Status.Text = "on"
+		Status.Text = "N"
 		Status.TextColor3 = Color3.new(0,185,0)
 		Stepped = game:GetService("RunService").Stepped:Connect(function()
 			if not Clipon == false then
@@ -777,3 +777,4 @@ for i,v in pairs(cors) do
 		pcall(v)
 	end)
 end
+
