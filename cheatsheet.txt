@@ -99,8 +99,8 @@ Title.Name = "Title"
 Title.Parent = BG
 Title.BackgroundColor3 = Color3.new(1, 1, 1)
 Title.Size = UDim2.new(0, 210, 0, 33)
-Title.Font = Enum.Font.Arimo
-Title.Text = "Noclip"
+Title.Font = Enum.Font.Gotham
+Title.Text = "noclip"
 Title.TextColor3 = Color3.new(0, 0, 0)
 Title.FontSize = Enum.FontSize.Size32
 Title.TextSize = 30
@@ -109,9 +109,9 @@ Toggle.Parent = BG
 Toggle.BackgroundColor3 = Color3.new(1, 1, 1)
 Toggle.Position = UDim2.new(0, 0, 0.72, 0)
 Toggle.Size = UDim2.new(0, 210, 0, 36)
-Toggle.Font = Enum.Font.Arimo
+Toggle.Font = Enum.Font.Gotham
 Toggle.FontSize = Enum.FontSize.Size28
-Toggle.Text = "Toggle"
+Toggle.Text = "toggle"
 Toggle.TextColor3 = Color3.new(0, 0, 0)
 Toggle.TextSize = 30
 
@@ -121,7 +121,7 @@ Status.BackgroundColor3 = Color3.new(1, 1, 1)
 Status.BackgroundTransparency = 1
 Status.Position = UDim2.new(0.44, 0, 0.4, 0)
 Status.Size = UDim2.new(0, 56, 0, 20)
-Status.Font = Enum.Font.Arimo
+Status.Font = Enum.Font.Gotham
 Status.FontSize = Enum.FontSize.Size14
 Status.Text = "F"
 Status.TextColor3 = Color3.new(1, 0, 0)
@@ -648,6 +648,82 @@ mini2.MouseButton1Click:Connect(function()
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
 end)
 
+local gui = Instance.new("ScreenGui")
+local main = Instance.new("Frame")
+local label = Instance.new("TextLabel")
+local UITextSizeConstraint = Instance.new("UITextSizeConstraint")
+local button = Instance.new("TextButton")
+local UITextSizeConstraint_2 = Instance.new("UITextSizeConstraint")
 
+gui.Name = "gui"
+gui.Parent = gethui()
+gui.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
 
+main.Name = "main"
+main.Parent = gui
+main.BackgroundColor3 = Color3.fromRGB(0, 0, 0)
+main.BorderColor3 = Color3.fromRGB(0, 0, 0)
+main.BorderSizePixel = 0
+main.Position = UDim2.new(0.196095973, 0, 0.556803584, 0)
+main.Size = UDim2.new(0.178187668, 0, 0.13960205, 0)
+main.Active = true
+main.Draggable = true
 
+label.Name = "label"
+label.Parent = main
+label.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+label.BorderColor3 = Color3.fromRGB(0, 0, 0)
+label.BorderSizePixel = 0
+label.Size = UDim2.new(1, 0, 0.294736832, 0)
+label.Font = Enum.Font.Gotham
+label.Text = "zerogravity"
+label.TextColor3 = Color3.fromRGB(0, 0, 0)
+label.TextScaled = true
+label.TextSize = 29.000
+label.TextWrapped = true
+
+UITextSizeConstraint.Parent = label
+UITextSizeConstraint.MaxTextSize = 29
+
+button.Name = "button"
+button.Parent = main
+button.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+button.BorderColor3 = Color3.fromRGB(0, 0, 0)
+button.BorderSizePixel = 0
+button.Position = UDim2.new(0, 0, 0.5, 0)
+button.Size = UDim2.new(1, 0, 0.5, 0)
+button.Font = Enum.Font.Gotham
+button.Text = "toggle"
+button.TextColor3 = Color3.fromRGB(0, 0, 0)
+button.TextSize = 24.000
+button.TextScaled = true
+button.TextWrapped = true
+
+UITextSizeConstraint_2.Parent = button
+UITextSizeConstraint_2.MaxTextSize = 31
+
+-- Scripts:
+
+local plr = game:GetService("Players").LocalPlayer
+local normalGravity = workspace.Gravity
+
+local function MUBRZ_fake_script() -- button.script 
+	local script = Instance.new('LocalScript', button)
+
+	script.Parent.MouseButton1Click:Connect(function()
+		workspace.Gravity = 0
+
+		local humanoid = plr.Character:FindFirstChildWhichIsA("Humanoid")
+		humanoid.Sit = true
+		task.wait(0.1)
+		humanoid.RootPart.CFrame = humanoid.RootPart.CFrame * CFrame.Angles(math.pi * 0.5, 0, 0)
+		for _, v in ipairs(humanoid:GetPlayingAnimationTracks()) do
+			v:Stop()
+		end
+	end)
+	
+	game:GetService("UserInputService").JumpRequest:Connect(function()
+		workspace.Gravity = normalGravity
+	end)
+end
+coroutine.wrap(MUBRZ_fake_script)()
