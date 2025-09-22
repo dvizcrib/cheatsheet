@@ -72,8 +72,8 @@ ca:BindAction("zeezyAirjump",zeezyAirjump,false,AirjumpKey)
 
 --[[ Load Message ]]--
 
-print(scriptname .. " " .. ver .. " loaded successfully")
-print("made by Zeezy#7203")
+print(scriptname .. " " .. ver .. " успешно загружен!")
+print("сделано двизом короч")
 
 local notifSound = Instance.new("Sound",workspace)
 notifSound.PlaybackSpeed = 1.5
@@ -114,7 +114,7 @@ Title.BorderColor3 = Color3.new(0.180392, 0, 0.431373)
 Title.BorderSizePixel = 2
 Title.Size = UDim2.new(0, 210, 0, 33)
 Title.Font = Enum.Font.Highway
-Title.Text = "Noclip"
+Title.Text = "ноуклип"
 Title.TextColor3 = Color3.new(1, 1, 1)
 Title.FontSize = Enum.FontSize.Size32
 Title.TextSize = 30
@@ -143,7 +143,7 @@ StatusPF.Position = UDim2.new(0.314285725, 0, 0.708661377, 0)
 StatusPF.Size = UDim2.new(0, 56, 0, 20)
 StatusPF.Font = Enum.Font.Highway
 StatusPF.FontSize = Enum.FontSize.Size24
-StatusPF.Text = "Status:"
+StatusPF.Text = "Статус:"
 StatusPF.TextColor3 = Color3.new(1, 1, 1)
 StatusPF.TextSize = 20
 StatusPF.TextStrokeColor3 = Color3.new(0.333333, 0.333333, 0.333333)
@@ -158,7 +158,7 @@ Status.Position = UDim2.new(0.580952346, 0, 0.708661377, 0)
 Status.Size = UDim2.new(0, 56, 0, 20)
 Status.Font = Enum.Font.Highway
 Status.FontSize = Enum.FontSize.Size14
-Status.Text = "off"
+Status.Text = "выключить"
 Status.TextColor3 = Color3.new(0.666667, 0, 0)
 Status.TextScaled = true
 Status.TextSize = 14
@@ -168,9 +168,9 @@ Status.TextXAlignment = Enum.TextXAlignment.Left
 
 
 Toggle.MouseButton1Click:connect(function()
-	if Status.Text == "off" then
+	if Status.Text == "выключить" then
 		Clipon = true
-		Status.Text = "on"
+		Status.Text = "включить"
 		Status.TextColor3 = Color3.new(0,185,0)
 		Stepped = game:GetService("RunService").Stepped:Connect(function()
 			if not Clipon == false then
@@ -220,7 +220,7 @@ up.Parent = Frame
 up.BackgroundColor3 = Color3.fromRGB(79, 255, 152)
 up.Size = UDim2.new(0, 44, 0, 28)
 up.Font = Enum.Font.SourceSans
-up.Text = "UP"
+up.Text = "АП"
 up.TextColor3 = Color3.fromRGB(0, 0, 0)
 up.TextSize = 14.000
 
@@ -230,7 +230,7 @@ down.BackgroundColor3 = Color3.fromRGB(215, 255, 121)
 down.Position = UDim2.new(0, 0, 0.491228074, 0)
 down.Size = UDim2.new(0, 44, 0, 28)
 down.Font = Enum.Font.SourceSans
-down.Text = "DOWN"
+down.Text = "ДАУН"
 down.TextColor3 = Color3.fromRGB(0, 0, 0)
 down.TextSize = 14.000
 
@@ -240,7 +240,7 @@ onof.BackgroundColor3 = Color3.fromRGB(255, 249, 74)
 onof.Position = UDim2.new(0.702823281, 0, 0.491228074, 0)
 onof.Size = UDim2.new(0, 56, 0, 28)
 onof.Font = Enum.Font.SourceSans
-onof.Text = "fly"
+onof.Text = "полёт"
 onof.TextColor3 = Color3.fromRGB(0, 0, 0)
 onof.TextSize = 14.000
 
@@ -249,7 +249,7 @@ TextLabel.BackgroundColor3 = Color3.fromRGB(242, 60, 255)
 TextLabel.Position = UDim2.new(0.469327301, 0, 0, 0)
 TextLabel.Size = UDim2.new(0, 100, 0, 28)
 TextLabel.Font = Enum.Font.SourceSans
-TextLabel.Text = "FLY GUI V3"
+TextLabel.Text = "жёский палёт ваще круто"
 TextLabel.TextColor3 = Color3.fromRGB(0, 0, 0)
 TextLabel.TextScaled = true
 TextLabel.TextSize = 14.000
@@ -664,4 +664,5 @@ mini2.MouseButton1Click:Connect(function()
 	mini2.Visible = false
 	main.Frame.BackgroundTransparency = 0 
 	closebutton.Position =  UDim2.new(0, 0, -1, 27)
+
 end)
